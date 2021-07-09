@@ -1,1 +1,27 @@
+#include<stdio.h>
+#include<time.h>
+int GCD(int a,int b)
+{
+int r;
+r=a%b;
+if(r==0)
+return b;
+else
+return(GCD(b,r));
+}
+int main()
+{
+int a,b,res;
+clock_t start,end;
+double time;
+printf("enter the values\n");
+scanf("%d%d",&a,&b);
+start=clock();
+res=GCD(a,b);
+end=clock();
+time=(double)(end-start)/CLOCKS_PER_SEC;
+printf("GCD of A and B =%d\n",a,b,res);
+printf("time required is %f\n",time);
+}
+
 
